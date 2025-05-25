@@ -267,6 +267,7 @@
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
       position: relative;
+      justify-items: center; /* Center items in the grid */
     }
 
     .gallery.visible {
@@ -283,6 +284,8 @@
       animation: pulse 2s infinite;
       margin-bottom: 1rem;
       pointer-events: auto;
+      max-width: 560px; /* Match the default iframe width */
+      width: 100%; /* Ensure it respects the max-width */
     }
 
     @keyframes pulse {
@@ -299,10 +302,12 @@
     .gallery-item iframe,
     .gallery-item img {
       width: 100%;
-      height: clamp(120px, 20vw, 200px);
+      height: 100%; /* Use 100% to maintain aspect ratio */
+      max-height: 315px; /* Match the default iframe height */
       object-fit: cover;
       pointer-events: auto;
       z-index: 10;
+      aspect-ratio: 16 / 9; /* Enforce 16:9 aspect ratio for consistency */
     }
 
     #hacking-animation {
