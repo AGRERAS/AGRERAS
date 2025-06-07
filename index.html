@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="A$RERAS.png">
   <title>Портфолио | Дизайнери мултимедиявӣ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
@@ -18,7 +19,25 @@
       color: #fff;
       overflow-x: hidden;
       position: relative;
-      transition: all 0.3s ease;
+      cursor: none;
+    }
+
+    .custom-cursor {
+      position: fixed;
+      width: 15px;
+      height: 15px;
+      background: rgba(0, 255, 136, 0.2);
+      border: 2px solid #00ff88;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      box-shadow: 0 0 10px #00ff88;
+    }
+
+    .custom-cursor.glow {
+      transform: scale(1.5);
+      box-shadow: 0 0 20px #ff6f00, 0 0 30px #00ff88;
     }
 
     header {
@@ -26,22 +45,22 @@
       top: 0;
       width: 100%;
       padding: 1rem;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.9);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       z-index: 1000;
       text-align: center;
+      border-bottom: 2px dashed #ff6f00;
     }
 
     header .graffiti {
+      font-family: 'Orbitron', sans-serif;
       font-size: clamp(1.5rem, 5vw, 3rem);
-      font-family: 'Miami', sans-serif;
       color: #ff6f00;
       text-shadow: 0 0 10px #ff6f00, 0 0 20px #00ff88;
       animation: neonCycle 5s infinite alternate;
-      margin-bottom: 0.5rem;
     }
 
     @keyframes neonCycle {
@@ -53,6 +72,7 @@
     }
 
     header h1 {
+      font-family: 'Orbitron', sans-serif;
       color: #ff6f00;
       text-shadow: 0 0 10px #ff6f00, 0 0 20px #00b7eb;
       font-size: clamp(1.2rem, 3vw, 2rem);
@@ -61,7 +81,7 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.5rem;
       justify-content: center;
       margin-top: 0.5rem;
     }
@@ -69,6 +89,7 @@
     nav a {
       color: #00ff88;
       text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
       font-weight: bold;
       text-shadow: 0 0 5px #00ff88;
       transition: color 0.3s, transform 0.3s;
@@ -95,7 +116,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: radial-gradient(circle, rgba(255, 111, 0, 0.1), #1a0b00);
+      background: radial-gradient(circle, rgba(255, 111, 0, 0.2), #1a0b00);
       position: relative;
       padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 2vw, 1.25rem);
       gap: 3rem;
@@ -106,7 +127,6 @@
       height: auto;
       filter: drop-shadow(0 0 20px #ff6f00) drop-shadow(0 0 40px #00ff88);
       animation: logoGlow 2s infinite alternate;
-      margin-top: 7rem;
     }
 
     @keyframes logoGlow {
@@ -127,6 +147,7 @@
     }
 
     .hero-brand {
+      font-family: 'Orbitron', sans-serif;
       font-size: clamp(1.5rem, 4vw, 3.5rem);
       color: #ff6f00;
       text-shadow: 0 0 20px #ff6f00, 0 0 40px #00ff88;
@@ -177,14 +198,24 @@
     }
 
     .hero h2 {
+      font-family: 'Orbitron', sans-serif;
       font-size: clamp(1.5rem, 5vw, 4rem);
       color: #00ff88;
       text-shadow: 0 0 15px #00ff88;
       background: rgba(0, 0, 0, 0.8);
       padding: 0.5rem 1rem;
       border-radius: 5px;
-      opacity: 0;
       animation: codeAppear 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid #00ff88;
+    }
+
+    .hero p {
+      font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88;
+      animation: typing 3s steps(40, end) forwards 1s, blink 0.75s step-end infinite;
       white-space: nowrap;
       overflow: hidden;
       border-right: 0.15em solid #00ff88;
@@ -197,17 +228,6 @@
 
     @keyframes blink {
       50% { border-color: transparent; }
-    }
-
-    .hero p {
-      font-size: clamp(0.9rem, 2.5vw, 1.5rem);
-      color: #00ff88;
-      text-shadow: 0 0 10px #00ff88;
-      opacity: 0;
-      animation: typing 3s steps(40, end) forwards 1s, blink 0.75s step-end infinite;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 0.15em solid #00ff88;
     }
 
     @keyframes typing {
@@ -231,6 +251,7 @@
     }
 
     section h3 {
+      font-family: 'Orbitron', sans-serif;
       font-size: clamp(1.2rem, 4vw, 2.5rem);
       color: #ff6f00;
       text-shadow: 0 0 10px #ff6f00;
@@ -266,9 +287,7 @@
       margin: 0 auto;
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.5s ease; /* Simplified transition */
-      position: relative;
-      justify-items: center;
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .gallery.visible {
@@ -284,7 +303,6 @@
       transition: transform 0.3s, box-shadow 0.3s;
       animation: pulse 2s infinite;
       margin-bottom: 1rem;
-      pointer-events: auto;
       max-width: clamp(300px, 90vw, 560px);
       width: 100%;
     }
@@ -304,10 +322,9 @@
     .gallery-item img {
       width: 100%;
       height: auto;
-      object-fit: cover;
-      pointer-events: auto;
-      z-index: 10;
       aspect-ratio: 16 / 9;
+      object-fit: cover;
+      z-index: 10;
     }
 
     #hacking-animation {
@@ -315,11 +332,12 @@
       background: #000;
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
     }
 
     #hacking-animation canvas {
       width: 100%;
-      height: 100vh;
+      height: 100%;
     }
 
     #final-words {
@@ -339,6 +357,7 @@
     }
 
     #final-words .signature h3 {
+      font-family: 'Orbitron', sans-serif;
       font-size: clamp(1.5rem, 4vw, 3rem);
       color: #ff6f00;
       text-shadow: 0 0 15px #ff6f00, 0 0 30px #00ff88;
@@ -391,223 +410,44 @@
     }
 
     @media (max-width: 1024px) {
-      header {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.5rem;
-      }
-
-      nav {
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 0.5rem;
-      }
-
-      nav a {
-        padding: 0.3rem 0.6rem;
-        font-size: clamp(0.7rem, 1.8vw, 0.9rem);
-      }
-
-      .hero {
-        padding: clamp(1.5rem, 4vw, 3rem) clamp(0.5rem, 1.5vw, 1rem);
-        gap: 1.5rem;
-      }
-
-      .hero-logo {
-        width: clamp(120px, 20vw, 300px);
-      }
-
-      .hero-photo {
-        width: clamp(100px, 18vw, 180px);
-        height: clamp(100px, 18vw, 180px);
-      }
+      header { flex-direction: column; gap: 0.5rem; padding: 0.5rem; }
+      nav { gap: 1rem; }
+      .hero { padding: clamp(1.5rem, 4vw, 3rem) clamp(0.5rem, 1.5vw, 1rem); gap: 1.5rem; }
+      .hero-logo { width: clamp(120px, 20vw, 300px); }
+      .hero-photo { width: clamp(100px, 18vw, 180px); height: clamp(100px, 18vw, 180px); }
     }
 
     @media (max-width: 768px) {
-      header {
-        padding: 0.5rem;
-      }
-
-      nav {
-        gap: 0.8rem;
-      }
-
-      nav a {
-        font-size: clamp(0.6rem, 1.5vw, 0.8rem);
-        padding: 0.2rem 0.5rem;
-      }
-
-      .hero {
-        padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 1vw, 0.75rem);
-        gap: 1rem;
-      }
-
-      .hero-brand-container {
-        padding: 0.8rem 1.5rem;
-      }
-
-      .hero-brand {
-        font-size: clamp(1rem, 3.5vw, 2.5rem);
-      }
-
-      .hero-tagline {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
-      }
-
-      .hero h2 {
-        font-size: clamp(1.2rem, 4vw, 3rem);
-      }
-
-      .hero p {
-        font-size: clamp(0.7rem, 1.8vw, 1rem);
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-      }
-
-      section {
-        padding: clamp(1.5rem, 4vw, 3rem) clamp(0.5rem, 1vw, 0.75rem);
-      }
-
-      section h3 {
-        font-size: clamp(1rem, 3.5vw, 2rem);
-      }
+      header { padding: 0.5rem; }
+      nav { gap: 0.8rem; }
+      .hero { padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 1vw, 0.75rem); gap: 1rem; }
+      .hero-brand-container { padding: 0.8rem 1.5rem; }
+      .hero-brand { font-size: clamp(1rem, 3.5vw, 2.5rem); }
+      .hero-tagline { font-size: clamp(0.8rem, 2vw, 1.2rem); }
+      .gallery { grid-template-columns: 1fr; gap: 0.8rem; }
+      section { padding: clamp(1.5rem, 4vw, 3rem) clamp(0.5rem, 1vw, 0.75rem); }
+      section h3 { font-size: clamp(1rem, 3.5vw, 2rem); }
     }
 
     @media (max-width: 480px) {
-      header h1 {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
-      }
-
-      nav a {
-        font-size: clamp(0.5rem, 1.2vw, 0.7rem);
-        padding: 0.2rem 0.4rem;
-      }
-
-      .hero {
-        padding: clamp(0.8rem, 2vw, 1.5rem) clamp(0.3rem, 0.8vw, 0.5rem);
-        gap: 0.8rem;
-      }
-
-      .hero-logo {
-        width: clamp(100px, 18vw, 250px);
-      }
-
-      .hero-photo {
-        width: clamp(80px, 15vw, 150px);
-        height: clamp(80px, 15vw, 150px);
-      }
-
-      .hero-brand {
-        font-size: clamp(0.9rem, 3vw, 2rem);
-      }
-
-      .hero-tagline {
-        font-size: clamp(0.6rem, 1.5vw, 1rem);
-      }
-
-      .hero h2 {
-        font-size: clamp(1rem, 3.5vw, 2.5rem);
-      }
-
-      .hero p {
-        font-size: clamp(0.6rem, 1.5vw, 0.9rem);
-      }
+      header h1 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+      nav a { font-size: clamp(0.5rem, 1.2vw, 0.7rem); padding: 0.2rem 0.4rem; }
+      .hero { padding: clamp(0.8rem, 2vw, 1.5rem) clamp(0.3rem, 0.8vw, 0.5rem); gap: 0.8rem; }
+      .hero-logo { width: clamp(100px, 18vw, 250px); }
+      .hero-photo { width: clamp(80px, 15vw, 150px); height: clamp(80px, 15vw, 150px); }
+      .hero-brand { font-size: clamp(0.9rem, 3vw, 2rem); }
+      .hero-tagline { font-size: clamp(0.6rem, 1.5vw, 1rem); }
     }
 
     @media (max-width: 320px) {
-      header h1 {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
-      }
-
-      nav a {
-        font-size: clamp(0.4rem, 1vw, 0.6rem);
-        padding: 0.1rem 0.3rem;
-      }
-
-      .hero {
-        padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.2rem, 0.5vw, 0.3rem);
-      }
-    }
-
-    @media (min-width: 1920px) {
-      .hero-logo {
-        width: clamp(300px, 20vw, 450px);
-      }
-
-      .hero-photo {
-        width: clamp(200px, 10vw, 300px);
-        height: clamp(200px, 10vw, 300px);
-      }
-
-      .hero-brand {
-        font-size: clamp(2rem, 3vw, 4rem);
-      }
-
-      .hero-tagline {
-        font-size: clamp(1.2rem, 1.5vw, 2rem);
-      }
-
-      .hero h2 {
-        font-size: clamp(3rem, 4vw, 5rem);
-      }
-
-      .hero p {
-        font-size: clamp(1.2rem, 1.5vw, 2rem);
-      }
-    }
-
-    .glitch {
-      animation: glitchAnimation 0.5s infinite;
-      position: relative;
-    }
-
-    @keyframes glitchAnimation {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(2px, -2px); }
-      60% { transform: translate(-2px, -2px); }
-      80% { transform: translate(2px, 2px); }
-      100% { transform: translate(0); }
-    }
-
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .glitch::before {
-      color: #ff6f00;
-      animation: glitchOffset 0.5s infinite;
-      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    }
-
-    .glitch::after {
-      color: #00b7eb;
-      animation: glitchOffset 0.5s infinite reverse;
-      clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-      -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    }
-
-    @keyframes glitchOffset {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(2px, -2px); }
-      60% { transform: translate(-2px, -2px); }
-      80% { transform: translate(2px, 2px); }
-      100% { transform: translate(0); }
+      header h1 { font-size: clamp(0.8rem, 2vw, 1.2rem); }
+      nav a { font-size: clamp(0.4rem, 1vw, 0.6rem); padding: 0.1rem 0.3rem; }
+      .hero { padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.2rem, 0.5vw, 0.3rem); }
     }
   </style>
 </head>
 <body>
+  <div class="custom-cursor"></div>
   <canvas id="bgCanvas" class="canvas-bg"></canvas>
 
   <header>
@@ -616,10 +456,11 @@
     <nav>
       <a href="#ai-videos">Видеоҳои зеҳни сунъӣ</a>
       <a href="#2d-animations">Аниматсияҳои 2D</a>
-      <a href="#commercial-videos">Видеои тиҷоратӣ</a>
+      <a href="#commercial-videos">Видеоҳои тиҷоратӣ</a>
       <a href="#3d-animations">Аниматсияи 3D</a>
       <a href="#zach-king-video">Видео дар услуби Зак Кинг</a>
       <a href="#deepfake">Дипфейк</a>
+      <a href="#zuhrosun">Zuhrosun</a>
     </nav>
   </header>
 
@@ -641,7 +482,7 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/7BHYMhqw4U0?si=qJRKgNyJbRm91AQZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="gallery-item">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/jrTvA5v8VoU?si=bP5ExU8LlnzWCkJZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jrTvA5v8VoU?si=bP5ExU8LlnzWCkJZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -650,7 +491,7 @@
     <h3>Аниматсияҳои 2D бо даст кашидашуда</h3>
     <div class="gallery">
       <div class="gallery-item">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/TqnwIpLvnUA?si=zh_cbzU-29UNkTbR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TqnwIpLvnUA?si=zh_cbzU-29UNkTbR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -659,7 +500,7 @@
     <h3>Видеоҳои тиҷоратӣ</h3>
     <div class="gallery">
       <div class="gallery-item">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/ZAHMioeLjKo?si=03TGhlozV48ubuSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZAHMioeLjKo?si=03TGhlozV48ubuSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -677,14 +518,14 @@
     <h3>Видео дар услуби визуалии Зак Кинг</h3>
     <div class="gallery">
       <div class="gallery-item">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/sExIrptz8QY?si=rLwPMXuuNWzJQJ0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sExIrptz8QY?si=rLwPMXuuNWzJQJ0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="gallery-item">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/W9DNknxid1E?si=fuPw40cRJTlPjX4C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-       <div class="gallery-item">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/i6CFJM1OR7U?si=iofb8QL6_9FbK_e8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div> 
+      <div class="gallery-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/i6CFJM1OR7U?si=iofb8QL6_9FbK_e8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
@@ -704,10 +545,20 @@
     <h3>Эҷодиёти дипфейк</h3>
     <div class="gallery">
       <div class="gallery-item">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/SaQ-ja6mXeg?si=QS4OY5BA0AKomeDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SaQ-ja6mXeg?si=QS4OY5BA0AKomeDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="gallery-item">
         <img src="RONALDO.jpg" alt="Роналдо">
+      </div>
+    </div>
+  </section>
+
+  <section id="zuhrosun">
+    <h3>Zuhrosun - Инфлюенсери сохташуда бо AI</h3>
+    <div class="gallery">
+      <div class="gallery-item">
+        <p>Zuhrosun (@zohrosun) аст як инфлюенсер, ки бо истифода аз зеҳни сунъӣ аз ҷониби ман офарида шудааст. Ӯ шахси воқеӣ нест, ва ҳамаи мундариҷа аз ҷониби ман таҳия шудааст. Барои дидани профил клик кунед: <a href="https://www.instagram.com/zohrosun?igsh=c21qcWM4cmxkdjk=" target="_blank">https://www.instagram.com/zohrosun?igsh=c21qcWM4cmxkdjk=</a></p>
+        <img src="zuhrosun.png" alt="Зуҳросун" style="width: 100%; height: auto; aspect-ratio: 1 / 1;">
       </div>
     </div>
   </section>
@@ -731,10 +582,22 @@
     <p>© 2025 Дизайнери мултимедиявӣ A$RERAS | Ҳамаи ҳуқуқҳо маҳфузанд</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
   <script>
-    // Detect if the device is mobile/touch-based
-    const isMobile = /Mobi|Android|iPhone|iPad|iPod|Touch/i.test(navigator.userAgent);
+    // Custom Cursor
+    const cursor = document.querySelector('.custom-cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
 
+    document.querySelectorAll('.gallery-item, nav a, .hero-photo').forEach(item => {
+      item.addEventListener('mouseenter', () => cursor.classList.add('glow'));
+      item.addEventListener('mouseleave', () => cursor.classList.remove('glow'));
+    });
+
+    // Particle Background
     const bgCanvas = document.getElementById('bgCanvas');
     const bgCtx = bgCanvas.getContext('2d');
 
@@ -742,15 +605,14 @@
     bgCanvas.height = window.innerHeight;
 
     const particles = [];
-    // Reduce particle count on mobile
-    const particleCount = isMobile ? Math.min(30, window.innerWidth / 20) : Math.min(100, window.innerWidth / 10);
+    const particleCount = Math.min(100, window.innerWidth / 10);
     const mouseTrail = [];
 
     class Particle {
       constructor(x, y, isMouseTrail = false) {
         this.x = x || Math.random() * bgCanvas.width;
         this.y = y || Math.random() * bgCanvas.height;
-        this.size = isMobile ? Math.random() * 2 + 1 : (isMouseTrail ? Math.random() * 3 + 1 : Math.random() * 5 + 1);
+        this.size = isMouseTrail ? Math.random() * 3 + 1 : Math.random() * 5 + 1;
         this.speedX = isMouseTrail ? 0 : Math.random() * 2 - 1;
         this.speedY = isMouseTrail ? 0 : Math.random() * 2 - 1;
         this.color = ['#ff6f00', '#00ff88', '#00b7eb', '#8b00ff'][Math.floor(Math.random() * 4)];
@@ -793,32 +655,26 @@
         particles[i].update();
         particles[i].draw();
 
-        // Reduce line drawing frequency on mobile
-        if (!isMobile || Math.random() > 0.5) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 100) {
-              bgCtx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 100})`;
-              bgCtx.lineWidth = 1;
-              bgCtx.beginPath();
-              bgCtx.moveTo(particles[i].x, particles[i].y);
-              bgCtx.lineTo(particles[j].x, particles[j].y);
-              bgCtx.stroke();
-            }
+          if (distance < 120) {
+            bgCtx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 120})`;
+            bgCtx.lineWidth = 1;
+            bgCtx.beginPath();
+            bgCtx.moveTo(particles[i].x, particles[i].y);
+            bgCtx.lineTo(particles[j].x, particles[j].y);
+            bgCtx.stroke();
           }
         }
       }
 
-      // Only update mouse trail on non-mobile devices
-      if (!isMobile) {
-        for (let i = mouseTrail.length - 1; i >= 0; i--) {
-          mouseTrail[i].update();
-          mouseTrail[i].draw();
-          if (mouseTrail[i].life <= 0) mouseTrail.splice(i, 1);
-        }
+      for (let i = mouseTrail.length - 1; i >= 0; i--) {
+        mouseTrail[i].update();
+        mouseTrail[i].draw();
+        if (mouseTrail[i].life <= 0) mouseTrail.splice(i, 1);
       }
 
       requestAnimationFrame(animateBg);
@@ -826,37 +682,30 @@
 
     animateBg();
 
+    document.addEventListener('mousemove', (e) => {
+      mouseTrail.push(new Particle(e.clientX, e.clientY, true));
+    });
+
     window.addEventListener('resize', () => {
       bgCanvas.width = window.innerWidth;
       bgCanvas.height = window.innerHeight;
 
-      const newParticleCount = isMobile ? Math.min(30, window.innerWidth / 20) : Math.min(100, window.innerWidth / 10);
+      const newParticleCount = Math.min(100, window.innerWidth / 10);
       while (particles.length > newParticleCount) particles.pop();
       while (particles.length < newParticleCount) particles.push(new Particle());
     });
 
-    // Only add mouse trail on non-mobile devices
-    if (!isMobile) {
-      document.addEventListener('mousemove', (e) => {
-        mouseTrail.push(new Particle(e.clientX, e.clientY, true));
-      });
-    }
-
+    // Intersection Observer for Gallery
     const galleries = document.querySelectorAll('.gallery');
-    const observerOptions = {
-      threshold: 0.1
-    };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
     galleries.forEach(gallery => observer.observe(gallery));
 
+    // Matrix Animation
     const matrixCanvas = document.getElementById('matrixCanvas');
     const matrixCtx = matrixCanvas.getContext('2d');
 
@@ -864,16 +713,16 @@
     matrixCanvas.width = window.innerWidth;
 
     const chars = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789';
-    const fontSize = 14;
-    const columns = isMobile ? Math.floor(matrixCanvas.width / (fontSize * 2)) : Math.floor(matrixCanvas.width / fontSize);
+    const fontSize = 16;
+    const columns = Math.floor(matrixCanvas.width / fontSize);
     const drops = [];
 
     for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
+      drops[x] = Math.random() * matrixCanvas.height / fontSize;
     }
 
     function drawMatrix() {
-      matrixCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      matrixCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
 
       matrixCtx.fillStyle = '#00ff88';
@@ -881,47 +730,60 @@
 
       for (let i = 0; i < drops.length; i++) {
         const text = chars.charAt(Math.floor(Math.random() * chars.length));
-        matrixCtx.fillText(text, i * (isMobile ? fontSize * 2 : fontSize), drops[i] * fontSize);
+        matrixCtx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
-
-        drops[i]++;
+        drops[i] += Math.random() * 0.5 + 0.3;
       }
     }
 
-    // Slower interval on mobile
-    setInterval(drawMatrix, isMobile ? 100 : 50);
+    setInterval(drawMatrix, 50);
 
     window.addEventListener('resize', () => {
       matrixCanvas.height = window.innerHeight;
       matrixCanvas.width = window.innerWidth;
+      const newColumns = Math.floor(matrixCanvas.width / fontSize);
+      while (drops.length < newColumns) drops.push(1);
+      while (drops.length > newColumns) drops.pop();
     });
 
-    function triggerGlitch() {
-      // Apply glitch to fewer elements on mobile
-      const elements = isMobile
-        ? document.querySelectorAll('h1, h2, h3') // Only headings on mobile
-        : document.querySelectorAll('h1, h2, h3, p, a');
-      elements.forEach(el => el.classList.add('glitch'));
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
 
-      setTimeout(() => {
-        elements.forEach(el => el.classList.remove('glitch'));
-      }, 5000);
-    }
+    gsap.from('.hero-logo', { opacity: 0, y: 50, duration: 1.5, ease: 'power2.out' });
+    gsap.from('.hero-brand-container', { opacity: 0, y: 50, duration: 1.5, delay: 0.5, ease: 'power2.out' });
+    gsap.from('.hero-photo', { opacity: 0, y: 50, duration: 1.5, delay: 1, ease: 'power2.out' });
+    gsap.from('.hero h2', { opacity: 0, y: 50, duration: 1.5, delay: 1.5, ease: 'power2.out' });
+    gsap.from('.hero p', { opacity: 0, y: 50, duration: 1.5, delay: 2, ease: 'power2.out' });
 
-    function randomDelay() {
-      const minDelay = isMobile ? 60 * 1000 : 30 * 1000; // Less frequent on mobile
-      const maxDelay = isMobile ? 6 * 60 * 1000 : 4 * 60 * 1000;
-      const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
-      setTimeout(() => {
-        triggerGlitch();
-        randomDelay();
-      }, delay);
-    }
+    gsap.utils.toArray('section').forEach(section => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+          end: 'top 20%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+    });
 
-    randomDelay();
+    gsap.utils.toArray('.gallery-item').forEach(item => {
+      gsap.from(item, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1,
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 90%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+    });
   </script>
 </body>
 </html>
